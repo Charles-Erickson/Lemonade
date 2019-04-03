@@ -2,8 +2,14 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="LemonadeStand.Weather">
     <Position X="1" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Forecast" Type="LemonadeStand.Forecast" FixedFromPoint="true">
+      <Path>
+        <Point X="2.062" Y="3.209" />
+        <Point X="2.062" Y="4.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAACAAAAICAQAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAECAAAAICAQAAQAAAAAAQAQAAAAAAA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,7 +19,7 @@
   <Class Name="LemonadeStand.Store">
     <Position X="10" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Store.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -30,7 +36,7 @@
   <Class Name="LemonadeStand.Game">
     <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAEAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>EAEAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAACQAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -61,19 +67,19 @@
   <Class Name="LemonadeStand.UserInterface">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAIBAA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAAIBAA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LemonadeStand.Customer">
     <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAAAAABAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LemonadeStand.Forecast">
-    <Position X="1.75" Y="3.25" Width="1.5" />
+    <Position X="1.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Forecast.cs</FileName>

@@ -7,5 +7,7 @@ namespace LemonadeStand
 {
     public class Store
     {
+        private int PriceOfLemons;
+        private const int PriceOfIce = 1;
     }
 }

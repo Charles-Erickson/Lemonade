@@ -11,5 +11,6 @@ namespace LemonadeStand
         int BoughtSugar;
         int BoughtCups;
         int BoughtIce;
+        private int PricePerCup;
     }
 }
