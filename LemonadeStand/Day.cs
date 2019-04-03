@@ -7,7 +7,7 @@ namespace LemonadeStand
 {
     public class Day
     {
-        int Time;
+       float Time;
         public Weather Weather;
         
            

@@ -15,6 +15,10 @@ namespace LemonadeStand
             SpareMoney = MoneyRange.NextDouble() * (1.5 - .2) + .2;
             return SpareMoney;
         }
+        public int WantToPay(string Weather,int Temp, int sugar, int lemons, int ice)
+        {
+
+        }
 
     }
 }

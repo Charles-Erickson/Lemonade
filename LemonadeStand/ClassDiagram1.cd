@@ -4,12 +4,12 @@
     <Position X="1" Y="0.5" Width="1.5" />
     <AssociationLine Name="Forecast" Type="LemonadeStand.Forecast" FixedFromPoint="true">
       <Path>
-        <Point X="2.062" Y="3.209" />
+        <Point X="2.062" Y="4.17" />
         <Point X="2.062" Y="4.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAECAAAAICAQAAQAAAAAAQAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAQAEAAgECAAAAICAQAAQAAAAAAQAQAABAABA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -34,7 +34,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="LemonadeStand.Game">
-    <Position X="7.25" Y="2.75" Width="1.5" />
+    <Position X="7.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAEAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAACQAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
@@ -74,7 +74,7 @@
   <Class Name="LemonadeStand.Customer">
     <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAABAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAgAAAAAAABAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>

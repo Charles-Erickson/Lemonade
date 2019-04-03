@@ -7,7 +7,7 @@ namespace LemonadeStand
 {
     public class Player
     {
-        int Cash;
+        decimal Cash=20;
         public Inventory Inventory;
     }
 }
