@@ -8,6 +8,9 @@ namespace LemonadeStand
     public class Store
     {
         private int PriceOfLemons;
-        private const int PriceOfIce = 1;
+        private int PriceOfIce;
+        private int PriceOfSugar;
+        private int PriceOfCups;
+
     }
 }

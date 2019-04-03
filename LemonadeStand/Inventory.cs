@@ -7,11 +7,37 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-        int Lemons;
-        int Sugar;
-        int Cups;
-        int Ice;
+        int LemonStock;
+        int SugarStock;
+        int CupStock;
+        int IceStock;
         int PitchersOfLemonade;
         int GlassesOfLemonade;
+
+        public int FindLemonStock()
+        {
+            LemonStock = UserInterface.BoughtItem;
+            return LemonStock;
+        }
+        public int FindSugarStock()
+        {
+            SugarStock = UserInterface.BoughtItem;
+            return SugarStock;
+        }
+        public int FindCupStock()
+        {
+            CupStock = UserInterface.BoughtItems;
+            return CupStock;
+        }
+        public int FindIceStock()
+        {
+            IceStock = UserInterface.BoughtItems;
+            return IceStock;
+        }
+        public PitcherRecipe()
+        {
+
+        }
+        
     }
 }

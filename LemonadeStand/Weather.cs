@@ -38,7 +38,7 @@ namespace LemonadeStand
                     WeatherScore = RainyScore;
                     return WeatherScore;
             }
-            return WeatherScore; ;
+            return WeatherScore;
         }
 
         public int CalculateTemp()
@@ -72,7 +72,11 @@ namespace LemonadeStand
             }
             return TempScore;
         }
-
+        public void DayGameWeather()
+        {
+            CalculateTemp();
+            WeatherForTheDay();
+        }
         public Forecast Forecast;
     
     }
