@@ -14,6 +14,14 @@ namespace LemonadeStand
         int PitchersOfLemonade;
         int GlassesOfLemonade;
 
+        public Recipe Recipe
+        {
+            get => default(Recipe);
+            set
+            {
+            }
+        }
+
         public int FindLemonStock()
         {
             LemonStock = UserInterface.BoughtItem;

@@ -14,6 +14,17 @@ namespace LemonadeStand
              Odds= OddsRange.Next(1, 10);
             return Odds;
         }
+        public bool BoughtOrNot()
+        {
+            if(Odds<=LikelyhoodToBuyLemonade && SpareMoney >= PricePerCup)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public Customer Customer;
 
         public Store Store;
@@ -21,7 +32,6 @@ namespace LemonadeStand
         public Player Player;
 
         public UserInterface UserInterface;
-
 
         public Day Day;
     }
