@@ -5,28 +5,34 @@ using System.Text;
 
 namespace LemonadeStand
 {
-    public class Weather
+    public class  Weather
     {
-        string Sunny="Sunny";
-        int SunnyScore = 1;
-        string Cloudy = "Cloudy";
-        int CloudyScore = 0;
-        string Foggy = "Foggy";
-        int FoggyScore = -1;
-        string Rainy = "Rainy";
-        int RainyScore = -2;
-        string GameWeather;
-        int WeatherScore;
-        int Tempeture;
-        int TempScore;
-        int WeatherNumber;
+        public string Sunny="Sunny";
+        public int SunnyScore = 1;
+        public string Cloudy = "Cloudy";
+        public int CloudyScore = 0;
+        public string Foggy = "Foggy";
+        public int FoggyScore = -1;
+        public string Rainy = "Rainy";
+        public int RainyScore = -2;
+        public string GameWeather;
+        public int WeatherScore;
+        public int Tempeture;
+        public int TempScore;
+        public int WeatherNumber;
+
+        //methods
         public int FindWeathernumber()
         {
             Random DailyWeatherNumber = new Random();
             int DailyWeather = DailyWeatherNumber.Next(1, 4);
             return WeatherNumber;
         }
-
+        public Weather()
+        {
+            WeatherScore = WeatherForTheDay(FindWeathernumber());
+            TempScore = FindTempScore(CalculateTemp());
+        }
         public int WeatherForTheDay(int number)
         {
             switch (number)
@@ -47,7 +53,7 @@ namespace LemonadeStand
             return WeatherScore;
         }
 
-
+     
         public string FindGameWeather (int number)
         {
             switch (number)

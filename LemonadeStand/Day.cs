@@ -7,7 +7,7 @@ namespace LemonadeStand
 {
     public class Day
     {
-        float Time;
+        public Customer customer;
         int CustomerNumber;
         public Weather weather;
         public Inventory inventory;
@@ -21,8 +21,17 @@ namespace LemonadeStand
         public Day()
         {
             weather = new Weather();
+            customer = new Customer();
+        
             weather.DayGameWeather();
-           
+            
+            void DailyCustomer(int range)
+            {
+                int i;
+                for (i = 0; i < range; i++);
+            }
+
+                       
 
 
 
