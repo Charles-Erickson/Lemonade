@@ -58,9 +58,12 @@
   <Class Name="LemonadeStand.Inventory" Collapsed="true">
     <Position X="11.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAgAAEAAAAAAAAAAAAAgAAAAAAAgAAAAAQAABAEAA=</HashCode>
+      <HashCode>AABAgAAEAAAAAAAAAAAAAgAAAAAAAgAAAAAQAABAFAA=</HashCode>
       <FileName>Inventory.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Supply" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="LemonadeStand.UserInterface" Collapsed="true">
     <Position X="5" Y="0.5" Width="1.5" />

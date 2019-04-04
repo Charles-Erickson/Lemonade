@@ -16,7 +16,12 @@ namespace LemonadeStand
         List<Supply> cup;
         List<Supply> lemonade;
 
-
-
+        public Supply Supply
+        {
+            get => default(Supply);
+            set
+            {
+            }
+        }
     }
 }
