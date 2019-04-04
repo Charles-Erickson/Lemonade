@@ -11,7 +11,6 @@ namespace LemonadeStand
         {
             price = .05;
             name = "ice";
-            ItemCount= 
-        }
+        }        
     }
 }

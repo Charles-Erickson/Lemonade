@@ -118,13 +118,9 @@
   <Class Name="LemonadeStand.Supply" Collapsed="true">
     <Position X="12" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAFAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAABAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Supply.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Recipe" />
-      <Property Name="Inventory" />
-    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
