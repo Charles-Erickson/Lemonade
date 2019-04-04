@@ -7,17 +7,25 @@ namespace LemonadeStand
 {
     public class Day
     {
-       float Time;
+        float Time;
         int CustomerNumber;
+        public Weather weather;
+        public Inventory inventory;
         public int CustomersPerDay()
         {
             Random CustomerRange = new Random();
             CustomerNumber = CustomerRange.Next(70, 110);
             return CustomerNumber;
         }
-        public Weather Weather;
-        
+
+        public Day()
+        {
+            weather = new Weather();
+            weather.DayGameWeather();
            
-        
+
+
+
+        }
     }
 }

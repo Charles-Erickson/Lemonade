@@ -9,9 +9,13 @@ namespace LemonadeStand
     {
         public string name;
         public double price;
+        public int ItemCount;
+        public Recipe recipe;
+        //methods
         public Supply()
         {
 
         }
-    }
+
+  
 }

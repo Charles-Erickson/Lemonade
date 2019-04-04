@@ -8,20 +8,23 @@ namespace LemonadeStand
     public class Inventory
     {
         public double money = 20.00;
-        public List<List<Supply>> supplies;
+        public List<int> supplies;
         public double profit;
-        List<Supply> lemon;
-        List<Supply> sugar;
-        List<Supply> ice;
-        List<Supply> cup;
-        List<Supply> lemonade;
+        public Lemons lemons;
+        //methods
 
-        public Supply Supply
+       
+
+        public Inventory()
         {
-            get => default(Supply);
-            set
+            lemons = new Lemons();
+            supplies = new List<int>
             {
-            }
+                lemons.ItemCount
+
+
+            };
         }
-    }
+
+    }    
 }

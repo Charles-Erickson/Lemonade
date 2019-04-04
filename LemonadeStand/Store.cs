@@ -7,10 +7,13 @@ namespace LemonadeStand
 {
     public class Store
     {
-        private int PriceOfLemons;
-        private int PriceOfIce;
-        private int PriceOfSugar;
-        private int PriceOfCups;
+        public Lemons lemons;
+        public Sugar sugar;
+        public Ice ice;
+        public Cups cups;
+        //methods
+
+        
 
     }
 }

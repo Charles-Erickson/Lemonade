@@ -7,17 +7,17 @@ namespace LemonadeStand
 {
     public class Recipe
     {
-        public int lemons;
-        public int sugar;
+        public int lem;
+        public int sug;
         public int ice;
-        public int cups;
+        public int cup;
         public double PriceOfLemonade;
 
         public int PickLemons()
         {
             Console.WriteLine("How many lemons?");
-            lemons = int.Parse(Console.ReadLine());
-            return lemons;
+            lem = int.Parse(Console.ReadLine());
+            return lem;
         }
 
         public int PickIce()
@@ -30,8 +30,8 @@ namespace LemonadeStand
         public int PickSugar()
         {
             Console.WriteLine("How much sugar?");
-            sugar = int.Parse(Console.ReadLine());
-            return sugar;
+            sug = int.Parse(Console.ReadLine());
+            return sug;
         }
 
     }
