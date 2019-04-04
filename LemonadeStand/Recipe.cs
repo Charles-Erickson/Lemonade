@@ -12,6 +12,18 @@ namespace LemonadeStand
         public int ice;
         public int cup;
         public double PriceOfLemonade;
+        public List<int> PitcherRecipe;
+
+        public Recipe()
+        {
+            PitcherRecipe = new List<int>();
+            void AddToPitcher()
+            {
+                PitcherRecipe.Add(PickLemons());
+                PitcherRecipe.Add(PickSugar());
+                PitcherRecipe.Add(PickIce());
+            }
+        }
 
         public int PickLemons()
         {
@@ -33,6 +45,7 @@ namespace LemonadeStand
             sug = int.Parse(Console.ReadLine());
             return sug;
         }
+
 
     }
 }

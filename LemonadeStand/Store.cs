@@ -23,12 +23,10 @@ namespace LemonadeStand
             cups = new Cups();
             inventory = new Inventory();
 
-            double PurchaseItemPrice()
+            double PurchaseItemPrice(string name)
             {
+
                 double price;
-                Console.WriteLine("Would you like to buy Lemons, Ice, Sugar, or Cups?");
-                string Name= Console.ReadLine();
-                string name=System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Name.ToLower());
                 switch (name)
                 {
                     case "Lemons":
@@ -44,11 +42,66 @@ namespace LemonadeStand
                         price = cups.price;
                         return price;
                     default:
-                        Console.WriteLine("Please enter a real item name.");
-                        Console.ReadKey();            
-                        return PurchaseItemPrice();
+                        return 0.00;
                 }
             }
+
+                string WhatToBuy()
+                {            
+                Console.WriteLine("Would you like to buy Lemons, Ice, Sugar, or Cups?");
+                string Name = Console.ReadLine();
+                string item = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Name.ToLower());
+                switch (item)
+                    {
+                    case "Lemons":
+                        return item;
+                    case "Ice":
+                        return item;
+                    case "Sugar":
+                        return item;
+                    case "Cups":
+                        return item;
+                    default:
+                        Console.WriteLine("Please enter a real item name.");
+                        Console.ReadKey();
+                        return WhatToBuy();
+                    }
+                }
+
+            double TotalCashSpent()
+            {
+                string name=WhatToBuy();
+                double price = PurchaseItemPrice(name);
+                Console.WriteLine("How many would you like to purchase?");
+                int number = 0;
+                try
+                {
+                    number = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Value needs to be a number");
+                }
+                double Cost = price * number;
+                Console.WriteLine("Would you like to buy more?");
+                string item = Console.ReadLine();
+                switch (item)
+                {
+                    case "yes":
+                        return TotalCashSpent();
+                    case "no":
+                        TotalCost = Cost;
+                        return TotalCost;
+                    default:
+                        Console.WriteLine("Please enter 'yes'or 'no'");
+                        Console.ReadKey();
+                        return TotalCashSpent();
+                }
+                return TotalCost;
+
+            }
+
+            
         }
 
     }

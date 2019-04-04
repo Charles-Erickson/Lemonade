@@ -31,7 +31,6 @@ namespace LemonadeStand
                     if (customer[i].LikelyhoodToBuyLemonade >= Odds&& PockectChange>=PriceOfLemonade)
                     {
                         soldInventory++;
-                        inventory.supplies[4].RemoveAt(0);
                     }
                     else
                     {
