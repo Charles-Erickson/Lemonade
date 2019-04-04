@@ -71,6 +71,7 @@ namespace LemonadeStand
             double TotalCashSpent()
             {
                 string name=WhatToBuy();
+                TotalCost=0;
                 double price = PurchaseItemPrice(name);
                 Console.WriteLine("How many would you like to purchase?");
                 int number = 0;
@@ -88,16 +89,18 @@ namespace LemonadeStand
                 switch (item)
                 {
                     case "yes":
+                        TotalCost = TotalCost + Cost;
                         return TotalCashSpent();
                     case "no":
-                        TotalCost = Cost;
+                        TotalCost = TotalCost+ Cost;
                         return TotalCost;
                     default:
                         Console.WriteLine("Please enter 'yes'or 'no'");
                         Console.ReadKey();
+
                         return TotalCashSpent();
                 }
-                return TotalCost;
+                
 
             }
 
