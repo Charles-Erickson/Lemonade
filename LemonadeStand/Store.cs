@@ -97,13 +97,28 @@ namespace LemonadeStand
                     default:
                         Console.WriteLine("Please enter 'yes'or 'no'");
                         Console.ReadKey();
-
                         return TotalCashSpent();
-                }
-                
-
+                }                
             }
 
+            double CalculateNewCashTotal()
+            {
+                TotalCashSpent();
+                double cash=inventory.StartingMoney;
+                if (TotalCost > cash)
+                {
+                    Console.WriteLine("Not enough Funds for Purchase");
+                    Console.ReadKey();
+                    return CalculateNewCashTotal();
+                }
+                else if (TotalCost <= cash)
+                {
+                    cash = cash - TotalCost;
+                    Console.WriteLine("Your new cash total is " + cash);
+                    return cash;
+                }
+                return cash;
+            }
             
         }
 

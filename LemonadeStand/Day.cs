@@ -11,6 +11,7 @@ namespace LemonadeStand
         int CustomerNumber;
         public Weather weather;
         public Inventory inventory;
+        public Recipe recipe;
         public int CustomersPerDay()
         {
             Random CustomerRange = new Random();
@@ -22,6 +23,8 @@ namespace LemonadeStand
         {
             weather = new Weather();
             customer = new Customer();
+            inventory = new Inventory();
+            recipe = new Recipe();
         
             weather.DayGameWeather();
             
