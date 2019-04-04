@@ -67,11 +67,34 @@ namespace LemonadeStand
                         return WhatToBuy();
                     }
                 }
+            int AddToStock(string name)
+            {
+                int item;
+                switch (name)
+                {
+                    case "Lemons":
+                        item = lemons.ItemCount;
+                        return item;
+                    case "Sugar":
+                        item = sugar.ItemCount;
+                        return item;
+                    case "Ice":
+                        item = ice.ItemCount;
+                        return item;
+                    case "Cups":
+                        item = cups.ItemCount;
+                        return item;
+                    default:
+                        return 0;
+                }
+              
+            }
 
             double TotalCashSpent()
             {
                 string name=WhatToBuy();
                 TotalCost=0;
+                int Numb = AddToStock(name);
                 double price = PurchaseItemPrice(name);
                 Console.WriteLine("How many would you like to purchase?");
                 int number = 0;
@@ -92,6 +115,7 @@ namespace LemonadeStand
                         TotalCost = TotalCost + Cost;
                         return TotalCashSpent();
                     case "no":
+                        Numb = Numb + number;
                         TotalCost = TotalCost+ Cost;
                         return TotalCost;
                     default:

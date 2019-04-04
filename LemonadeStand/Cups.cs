@@ -11,6 +11,7 @@ namespace LemonadeStand
         {
             price = .10;
             name = "cups";
+            ItemCount = 0;
         }
     }
 }

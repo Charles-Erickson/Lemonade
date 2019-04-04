@@ -11,6 +11,7 @@ namespace LemonadeStand
         {
             price = .15;
             name = "Lemons";
+            ItemCount=0;
         }
     }
 }
