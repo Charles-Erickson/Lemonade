@@ -7,23 +7,29 @@ namespace LemonadeStand
 {
     public class Weather
     {
-        string Sunny;
+        string Sunny="Sunny";
         int SunnyScore = 1;
-        string Cloudy;
+        string Cloudy = "Cloudy";
         int CloudyScore = 0;
-        string Foggy;
+        string Foggy = "Foggy";
         int FoggyScore = -1;
-        string Rainy;
+        string Rainy = "Rainy";
         int RainyScore = -2;
         string GameWeather;
         int WeatherScore;
         int Tempeture;
         int TempScore;
-        public int WeatherForTheDay()
+        int WeatherNumber;
+        public int FindWeathernumber()
         {
             Random DailyWeatherNumber = new Random();
             int DailyWeather = DailyWeatherNumber.Next(1, 4);
-            switch (DailyWeather)
+            return WeatherNumber;
+        }
+
+        public int WeatherForTheDay(int number)
+        {
+            switch (number)
             {
                 case 1:
                     WeatherScore = SunnyScore;
@@ -39,6 +45,27 @@ namespace LemonadeStand
                     return WeatherScore;
             }
             return WeatherScore;
+        }
+
+
+        public string FindGameWeather (int number)
+        {
+            switch (number)
+            {
+                case 1:
+                    GameWeather = Sunny;
+                    return GameWeather;
+                case 2:
+                    GameWeather = Cloudy;
+                    return GameWeather;
+                case 3:
+                    GameWeather = Foggy;
+                    return GameWeather;
+                case 4:
+                    GameWeather = Rainy;
+                    return GameWeather;
+            }
+            return GameWeather;
         }
 
         public int CalculateTemp()
@@ -74,8 +101,11 @@ namespace LemonadeStand
         }
         public void DayGameWeather()
         {
-            CalculateTemp();
-            WeatherForTheDay();
+            WeatherNumber=FindWeathernumber();
+            Tempeture= CalculateTemp();
+            FindTempScore(Tempeture);
+            WeatherForTheDay(WeatherNumber);
+            FindGameWeather(WeatherNumber);
         }
         public Forecast Forecast;
     

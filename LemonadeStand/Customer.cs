@@ -15,10 +15,11 @@ namespace LemonadeStand
             SpareMoney = MoneyRange.NextDouble() * (1.5 - .2) + .2;
             return SpareMoney;
         }
-        public int WantToPay(int weatherscore,int Temp, int sugar, int lemons, int ice)
+        public int WantToPay(int weatherscore,int Temp, int recipe)
         {
-            int StartingOdds = 5;
-            LikelyhoodToBuyLemonade = StartingOdds + weatherscore + Temp + sugar + lemons + ice;
+            Random rnd = new Random();
+            int StartingOdds = rnd.Next(3,6);
+            LikelyhoodToBuyLemonade = StartingOdds + weatherscore + Temp + recipe;
             return LikelyhoodToBuyLemonade;
         }
 

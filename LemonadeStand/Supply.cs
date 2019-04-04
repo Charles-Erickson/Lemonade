@@ -5,12 +5,13 @@ using System.Text;
 
 namespace LemonadeStand
 {
-    public class Cups : Supply
+    public abstract class Supply
     {
-        public Cups()
+        public string name;
+        public double price;
+        public Supply()
         {
-            price = .10;
-            name = "cups";
+
         }
     }
 }

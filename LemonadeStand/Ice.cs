@@ -5,12 +5,12 @@ using System.Text;
 
 namespace LemonadeStand
 {
-    public class Ice : Inventory
+    public class Ice : Supply
     {
         public Ice()
         {
-            double price = .05;
-            string name = "ice";
+            price = .05;
+            name = "ice";
         }
     }
 }

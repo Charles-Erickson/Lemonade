@@ -34,5 +34,13 @@ namespace LemonadeStand
         public UserInterface UserInterface;
 
         public Day Day;
+
+        public Inventory Inventory
+        {
+            get => default(Inventory);
+            set
+            {
+            }
+        }
     }
 }
