@@ -86,7 +86,7 @@ namespace LemonadeStand
         public void RunDayFunction()
             {
 
-                weather.DayGameWeather();
+            weather.DayGameWeather();
             Console.WriteLine("Welcome to a new day. The weather is " + weather.GameWeather + " The Temperature is " + weather.Tempeture);
             store.CalculateNewCashTotal();
             recipe.MakeLemondae();

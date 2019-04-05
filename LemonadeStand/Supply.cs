@@ -11,10 +11,7 @@ namespace LemonadeStand
         public double price;
         public int ItemCount;
         //methods
-        public Supply()
-        {
-
-        }
+       
 
     }
   

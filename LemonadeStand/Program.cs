@@ -10,9 +10,15 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+            Weather Weather = new Weather();
+            Inventory Inventory = new Inventory();
+            Recipe Recipe = new Recipe();
+            Customer Customer = new Customer();
+            Player Player = new Player();
             Store Store = new Store();
-            Store.CalculateNewCashTotal(Store.TotalCost);
-
+            Day Day = new Day();
+            //Day.RunDayFunction();
+            Store.WhatToBuy();
 
         }
     }

@@ -6,7 +6,7 @@ using System.Text;
 namespace LemonadeStand
 {
     public class Game
-    {      
+    {
         public Customer customer;
 
         public Store store;
@@ -28,6 +28,7 @@ namespace LemonadeStand
             player = new Player();
 
         }
+    }
 
         
 

@@ -22,7 +22,7 @@ namespace LemonadeStand
             sugar = new Sugar();
             ice = new Ice();
             cups = new Cups();
-            inventory = new Inventory();
+            //inventory = new Inventory();
             Name = WhatToBuy();
             TotalCost = TotalCashSpent(Name);
         }
