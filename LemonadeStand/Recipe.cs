@@ -55,24 +55,31 @@ namespace LemonadeStand
             return sug;
         }
 
-        public int FindRecipeScore(List<int> list)
+        public int FindRecipeScore(int lem, int sugar, int ice)
         {
-            if (list[0] > 3 && list[1] > 6 && list[2] > 2)
+            if (lem > 3 && sugar > 6 && ice > 3)
             {
                 RecipeScore = 1;
                 return RecipeScore;
             }
-            else if (list[0] > 2 && list[1] > 3 && list[2] > 1)
+            else if (lem > 2 && sugar > 4 && ice > 2)
             {
                 RecipeScore = 0;
                 return RecipeScore;
             }
-            else if (list[0] > 1 && list[1] > 2 && list[2] > 0)
+            else if (lem > 1 && sugar > 3 && ice > 1)
             {
                 RecipeScore = -1;
                 return RecipeScore;
             }
             return RecipeScore;
+        }
+        public void MakeLemondae()
+        {
+            PickLemons();
+            PickSugar();
+            PickIce();
+
         }
     
 

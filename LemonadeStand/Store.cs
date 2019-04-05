@@ -109,17 +109,19 @@ namespace LemonadeStand
                 }                
             }
 
-            public double CalculateNewCashTotal(double number)
+            public double CalculateNewCashTotal()
             {
+                 string name= WhatToBuy();
 
+                TotalCashSpent(name);
                 double cash=inventory.StartingMoney;
-                if (number > cash)
+                if (TotalCost > cash)
                 {
                     Console.WriteLine("Not enough Funds for Purchase");
                     Console.ReadKey();
-                    return CalculateNewCashTotal(number);
+                    return CalculateNewCashTotal();
                 }
-                else if (number<= cash)
+                else if (TotalCost<= cash)
                 {
                     cash = cash - TotalCost;
                     Console.WriteLine("Your new cash total is " + cash);

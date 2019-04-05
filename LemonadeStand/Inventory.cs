@@ -40,7 +40,12 @@ namespace LemonadeStand
         }
 
 
-
+        public void UseStock()
+        {
+            LemonStock = LemonStock - recipe.lem;
+            SugarStock = SugarStock - recipe.sug;
+            LemonStock = LemonStock - recipe.lem;
+        }
         
 
 

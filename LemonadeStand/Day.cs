@@ -10,10 +10,12 @@ namespace LemonadeStand
         public Customer customer;
         public int CustomerNumber;
         public int Odds;
+        int SoldCups;
         public Weather weather;
         public Inventory inventory;
         public Recipe recipe;
         public Player player;
+        public Store store;
 
 
         
@@ -47,6 +49,8 @@ namespace LemonadeStand
         {
             if (Odds <= customer.LikelyhoodToBuyLemonade && customer.SpareMoney >= player.PricePerCup)
             {
+                inventory.StartingMoney = inventory.StartingMoney + player.PricePerCup;
+                SoldCups = +1;
                 return true;
             }
             else
@@ -57,13 +61,21 @@ namespace LemonadeStand
 
         public void DailyCustomer(int range)
         {
+            int number;
             int i;
             for (i = 0; i < range; i++)
             {
                 customer.CustomerForTheDay();
                 customer.CustomerOdds();
                 BoughtOrNot();
+                if (SoldCups % recipe.RemainingCups == 0)
+                {
+                    inventory.UseStock();
+                }
+                else
+                {
 
+                }
             }
 
         }
@@ -76,9 +88,16 @@ namespace LemonadeStand
 
                 weather.DayGameWeather();
             Console.WriteLine("Welcome to a new day. The weather is " + weather.GameWeather + " The Temperature is " + weather.Tempeture);
+            store.CalculateNewCashTotal();
+            recipe.MakeLemondae();
+            player.SetPrice();
+            inventory.UseStock();
             DailyCustomer(CustomersPerDay());
+            Console.WriteLine(inventory.StartingMoney);
+            Console.ReadLine();
 
-            }
+
+        }
 
                        
 
