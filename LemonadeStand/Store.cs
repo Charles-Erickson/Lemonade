@@ -12,6 +12,7 @@ namespace LemonadeStand
         public Ice ice;
         public Cups cups;
         public Inventory inventory;
+        public string Name;
         public double TotalCost;
         //methods
 
@@ -22,33 +23,15 @@ namespace LemonadeStand
             ice = new Ice();
             cups = new Cups();
             inventory = new Inventory();
+            Name = WhatToBuy();
+            TotalCost = TotalCashSpent(Name);
+        }
 
-            double PurchaseItemPrice(string name)
-            {
 
-                double price;
-                switch (name)
-                {
-                    case "Lemons":
-                        price = lemons.price;
-                        return price;
-                    case "Ice":
-                        price = ice.price;
-                        return price;
-                    case "Sugar":
-                        price = sugar.price;
-                        return price;
-                    case "Cups":
-                        price = cups.price;
-                        return price;
-                    default:
-                        return 0.00;
-                }
-            }
 
-                string WhatToBuy()
+                public string WhatToBuy()
                 {            
-                Console.WriteLine("Would you like to buy Lemons, Ice, Sugar, or Cups?");
+                Console.WriteLine("Would you like to buy Lemons .15 each, Ice .05 each, Sugar .05 each, or Cups .10 each?");
                 string Name = Console.ReadLine();
                 string item = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Name.ToLower());
                 switch (item)
@@ -67,7 +50,8 @@ namespace LemonadeStand
                         return WhatToBuy();
                     }
                 }
-            int AddToStock(string name)
+
+            public int AddToStock(string name)
             {
                 int item;
                 switch (name)
@@ -90,10 +74,10 @@ namespace LemonadeStand
               
             }
 
-            double TotalCashSpent()
+            public double TotalCashSpent(string name)
             {
-                string name=WhatToBuy();
                 TotalCost=0;
+                double Cost = 0;
                 int Numb = AddToStock(name);
                 double price = PurchaseItemPrice(name);
                 Console.WriteLine("How many would you like to purchase?");
@@ -106,14 +90,14 @@ namespace LemonadeStand
                 {
                     Console.WriteLine("Value needs to be a number");
                 }
-                double Cost = price * number;
+                Cost = Cost+ price * number;
                 Console.WriteLine("Would you like to buy more?");
                 string item = Console.ReadLine();
                 switch (item)
                 {
                     case "yes":
                         TotalCost = TotalCost + Cost;
-                        return TotalCashSpent();
+                        return TotalCashSpent(name);
                     case "no":
                         Numb = Numb + number;
                         TotalCost = TotalCost+ Cost;
@@ -121,21 +105,21 @@ namespace LemonadeStand
                     default:
                         Console.WriteLine("Please enter 'yes'or 'no'");
                         Console.ReadKey();
-                        return TotalCashSpent();
+                        return TotalCashSpent(name);
                 }                
             }
 
-            double CalculateNewCashTotal()
+            public double CalculateNewCashTotal(double number)
             {
-                TotalCashSpent();
+
                 double cash=inventory.StartingMoney;
-                if (TotalCost > cash)
+                if (number > cash)
                 {
                     Console.WriteLine("Not enough Funds for Purchase");
                     Console.ReadKey();
-                    return CalculateNewCashTotal();
+                    return CalculateNewCashTotal(number);
                 }
-                else if (TotalCost <= cash)
+                else if (number<= cash)
                 {
                     cash = cash - TotalCost;
                     Console.WriteLine("Your new cash total is " + cash);
@@ -143,7 +127,34 @@ namespace LemonadeStand
                 }
                 return cash;
             }
+
+        
+
+        public double PurchaseItemPrice(string name)
+        {
+
+            double price;
+            switch (name)
+            {
+                case "Lemons":
+                    price = lemons.price;
+                    return price;
+                case "Ice":
+                    price = ice.price;
+                    return price;
+                case "Sugar":
+                    price = sugar.price;
+                    return price;
+                case "Cups":
+                    price = cups.price;
+                    return price;
+                default:
+                    return 0.00;
+            }
         }
 
+        
+
     }
+    
 }

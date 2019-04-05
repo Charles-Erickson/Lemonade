@@ -10,36 +10,29 @@ namespace LemonadeStand
 
         public Inventory inventory;
         public int soldInventory;
+        public double PricePerCup;
 
         public Player()
         {
             inventory = new Inventory();
         }
-        public int SellLemonade(List<Customer> customer)
+
+        public double SetPrice()
         {
-            soldInventory = 0;
-            for (int i = 0; i < customer.Count; i++)
+            Console.WriteLine("How much would you like to sell your Lemonade for today?");
+            PricePerCup = 0;
+            try
             {
-                if (inventory.supplies[4].Count == 0)
-                {
-                    Console.WriteLine("You sold out!!!!!");
-                    Console.ReadKey();
-                    break;
-                }
-                else
-                {
-                    if (customer[i].LikelyhoodToBuyLemonade >= Odds&& PockectChange>=PriceOfLemonade)
-                    {
-                        soldInventory++;
-                    }
-                    else
-                    {
- 
-                    }
-                }
+                PricePerCup = Double.Parse(Console.ReadLine());
             }
-            return soldInventory;
+            catch (FormatException)
+            {
+                Console.WriteLine("Value needs to be a number");
+            }
+            return PricePerCup;
         }
     }
+
+
        
 }

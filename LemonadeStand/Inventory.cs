@@ -8,6 +8,10 @@ namespace LemonadeStand
     public class Inventory
     {
         public double StartingMoney = 20.00;
+        public int LemonStock;
+        public int SugarStock;
+        public int IceStock;
+        public int CupStock;
         public Store store;
         public Lemons lemons;
         public Sugar sugar;
@@ -18,29 +22,33 @@ namespace LemonadeStand
         List<int> ComparingSuppliesAndRecipe;
         //methods
 
-
+      
 
         public Inventory()
         {
-
             lemons = new Lemons();
             sugar = new Sugar();
             ice = new Ice();
             cups = new Cups();
             store = new Store();
             recipe = new Recipe();
-            
             Supplies = new List<int>();
-            void AddSupplies()
-            {
-                Supplies.Add(lemons.ItemCount);
-                Supplies.Add(sugar.ItemCount);
-                Supplies.Add(ice.ItemCount);
-                Supplies.Add(cups.ItemCount);
-            }
-            
-
+            LemonStock = lemons.ItemCount;
+            SugarStock = sugar.ItemCount;
+            IceStock = ice.ItemCount;
+            CupStock = cups.ItemCount;
         }
 
-    }    
+
+
+        
+
+
+
+       
+
+
+
+
+    } 
 }

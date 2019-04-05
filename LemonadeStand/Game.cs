@@ -6,41 +6,31 @@ using System.Text;
 namespace LemonadeStand
 {
     public class Game
-    {
-        public int Odds;
-        public int OddsToBuy()
+    {      
+        public Customer customer;
+
+        public Store store;
+
+        public Player player;
+
+        public UserInterface userinterface;
+
+        public Day day;
+
+        public Inventory inventory;
+
+        public Game()
         {
-            Random OddsRange = new Random();
-             Odds= OddsRange.Next(1, 10);
-            return Odds;
+            customer = new Customer();
+            store = new Store();
+            inventory = new Inventory();
+            day = new Day();
+            player = new Player();
+
         }
-        public bool BoughtOrNot()
-        {
-            if(Odds<=LikelyhoodToBuyLemonade && SpareMoney >= PricePerCup)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public Customer Customer;
 
-        public Store Store;
+        
 
-        public Player Player;
 
-        public UserInterface UserInterface;
 
-        public Day Day;
-
-        public Inventory Inventory
-        {
-            get => default(Inventory);
-            set
-            {
-            }
-        }
-    }
 }
