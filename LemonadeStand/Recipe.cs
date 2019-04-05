@@ -22,8 +22,10 @@ namespace LemonadeStand
                 PitcherRecipe.Add(PickLemons());
                 PitcherRecipe.Add(PickSugar());
                 PitcherRecipe.Add(PickIce());
+                PitcherRecipe.Add(cup = 10);
             }
         }
+
 
         public int PickLemons()
         {

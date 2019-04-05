@@ -13,10 +13,12 @@ namespace LemonadeStand
         public Sugar sugar;
         public Ice ice;
         public Cups cups;
+        public Recipe recipe;
         public List<int> Supplies;
+        List<int> ComparingSuppliesAndRecipe;
         //methods
 
-       
+
 
         public Inventory()
         {
@@ -26,7 +28,9 @@ namespace LemonadeStand
             ice = new Ice();
             cups = new Cups();
             store = new Store();
-            Supplies = new List<int>;
+            recipe = new Recipe();
+            
+            Supplies = new List<int>();
             void AddSupplies()
             {
                 Supplies.Add(lemons.ItemCount);
@@ -34,6 +38,7 @@ namespace LemonadeStand
                 Supplies.Add(ice.ItemCount);
                 Supplies.Add(cups.ItemCount);
             }
+            
 
         }
 

@@ -107,11 +107,11 @@ namespace LemonadeStand
         }
         public void DayGameWeather()
         {
-            WeatherNumber=FindWeathernumber();
-            Tempeture= CalculateTemp();
-            FindTempScore(Tempeture);
-            WeatherForTheDay(WeatherNumber);
-            FindGameWeather(WeatherNumber);
+            int number=FindWeathernumber();
+            int Temp= CalculateTemp();
+            FindTempScore(Temp);
+            WeatherForTheDay(number);
+            FindGameWeather(number);
         }
         public Forecast Forecast;
     

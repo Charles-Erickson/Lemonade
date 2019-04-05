@@ -143,7 +143,6 @@ namespace LemonadeStand
                 }
                 return cash;
             }
-            
         }
 
     }
