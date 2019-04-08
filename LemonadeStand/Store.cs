@@ -91,6 +91,8 @@ namespace LemonadeStand
                     Console.WriteLine("Value needs to be a number");
                 }
                 Cost = Cost+ price * number;
+                Console.WriteLine(Cost);
+                Console.ReadKey();
                 Console.WriteLine("Would you like to buy more?");
                 string item = Console.ReadLine();
                 switch (item)
