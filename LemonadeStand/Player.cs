@@ -8,13 +8,14 @@ namespace LemonadeStand
     public class Player
     {
 
-        public Inventory inventory;
+
+        public double StartingMoney = 20.00;
         public int soldInventory;
         public double PricePerCup;
 
         public Player()
         {
-            inventory = new Inventory();
+
         }
 
         public double SetPrice()

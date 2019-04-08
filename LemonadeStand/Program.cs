@@ -17,7 +17,6 @@ namespace LemonadeStand
             Player Player = new Player();
             Store Store = new Store();
             Day Day = new Day();
-            //Day.RunDayFunction();
             Store.WhatToBuy();
 
         }

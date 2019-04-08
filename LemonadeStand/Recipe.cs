@@ -18,10 +18,7 @@ namespace LemonadeStand
 
         public Recipe()
         {
-            PitcherRecipe = new List<int>();
-            lem = PickLemons();
-            sug = PickSugar();
-            ice = PickIce();           
+            PitcherRecipe = new List<int>();        
         }
 
         public void AddToPitcher()
@@ -36,21 +33,30 @@ namespace LemonadeStand
 
         public int PickLemons()
         {
-            Console.WriteLine("How many lemons?");
+            Console.WriteLine("How many lemons per pitcher?");
+            int number = 0;
+            try
+            {
+                number = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Value needs to be a number");
+            }
             lem = int.Parse(Console.ReadLine());
             return lem;
         }
 
         public int PickIce()
         {
-            Console.WriteLine("How much ice?");
+            Console.WriteLine("How much ice per pitcher?");
             ice = int.Parse(Console.ReadLine());
             return ice;
         }
 
         public int PickSugar()
         {
-            Console.WriteLine("How much sugar?");
+            Console.WriteLine("How much sugar per pitcher?");
             sug = int.Parse(Console.ReadLine());
             return sug;
         }
@@ -76,6 +82,8 @@ namespace LemonadeStand
         }
         public void MakeLemondae()
         {
+            Console.WriteLine("Let's make Lemonade!");
+            Console.ReadKey();
             PickLemons();
             PickSugar();
             PickIce();

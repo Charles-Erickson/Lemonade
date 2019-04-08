@@ -7,7 +7,7 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-        public double StartingMoney = 20.00;
+
         public int LemonStock;
         public int SugarStock;
         public int IceStock;

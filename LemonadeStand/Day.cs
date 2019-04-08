@@ -49,7 +49,7 @@ namespace LemonadeStand
         {
             if (Odds <= customer.LikelyhoodToBuyLemonade && customer.SpareMoney >= player.PricePerCup)
             {
-                inventory.StartingMoney = inventory.StartingMoney + player.PricePerCup;
+                player.StartingMoney = player.StartingMoney + player.PricePerCup;
                 SoldCups = +1;
                 return true;
             }
@@ -93,7 +93,7 @@ namespace LemonadeStand
             player.SetPrice();
             inventory.UseStock();
             DailyCustomer(CustomersPerDay());
-            Console.WriteLine(inventory.StartingMoney);
+            Console.WriteLine(player.StartingMoney);
             Console.ReadLine();
 
 

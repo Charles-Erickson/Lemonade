@@ -11,7 +11,7 @@ namespace LemonadeStand
         public Sugar sugar;
         public Ice ice;
         public Cups cups;
-        public Inventory inventory;
+        public Player player;
         public string Name;
         public double TotalCost;
         //methods
@@ -22,7 +22,7 @@ namespace LemonadeStand
             sugar = new Sugar();
             ice = new Ice();
             cups = new Cups();
-            //inventory = new Inventory();
+            player = new Player();
             Name = WhatToBuy();
             TotalCost = TotalCashSpent(Name);
         }
@@ -97,6 +97,7 @@ namespace LemonadeStand
                 {
                     case "yes":
                         TotalCost = TotalCost + Cost;
+                        WhatToBuy();
                         return TotalCashSpent(name);
                     case "no":
                         Numb = Numb + number;
@@ -105,6 +106,7 @@ namespace LemonadeStand
                     default:
                         Console.WriteLine("Please enter 'yes'or 'no'");
                         Console.ReadKey();
+                        WhatToBuy();                    
                         return TotalCashSpent(name);
                 }                
             }
@@ -114,7 +116,7 @@ namespace LemonadeStand
                  string name= WhatToBuy();
 
                 TotalCashSpent(name);
-                double cash=inventory.StartingMoney;
+                double cash=player.StartingMoney;
                 if (TotalCost > cash)
                 {
                     Console.WriteLine("Not enough Funds for Purchase");
@@ -154,6 +156,7 @@ namespace LemonadeStand
                     return 0.00;
             }
         }
+      
 
         
 

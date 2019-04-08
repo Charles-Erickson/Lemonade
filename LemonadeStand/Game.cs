@@ -28,6 +28,14 @@ namespace LemonadeStand
             player = new Player();
 
         }
+        public void RunGame()
+        {
+            int i;
+            for (i = 0; i < 7; i++)
+            {
+                day.RunDayFunction();
+            }
+        }
     }
 
         
