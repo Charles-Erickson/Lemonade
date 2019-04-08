@@ -32,10 +32,11 @@ namespace LemonadeStand
         }
         public void RunGame()
         {
-            Console.WriteLine("Welcome to the Lemonade game! the goal is to make the most profit possible in a week.\n" +
+            Console.WriteLine("Welcome to the Lemonade game! the goal is to make the most profit possible in a week from your staring $20.\n" +
                 "You get to choose the recipe for your lemonade and how much you plan to sell it for.\n" +
                 "Be careful, price, recipe, and even the weather will effect how much lemonade you'll sell.\n" +
                 "Ready? Then let's get to work!!!");
+
             int i;
             for (i = 0; i < 7; i++)
             {
