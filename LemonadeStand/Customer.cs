@@ -31,19 +31,17 @@ namespace LemonadeStand
             Random rnd = new Random();
             StartingOdds = rnd.Next(3, 6);
             return StartingOdds;
-
         }
 
-        public int WantToPay(int weatherscore,int Temp, int recipe)
+        public int WantToPay(int odds, int weatherscore,int Temp, int recipe)
         {
-            int odds = CustomerOdds();
             LikelyhoodToBuyLemonade = odds + weatherscore + Temp + recipe;
             return LikelyhoodToBuyLemonade;
         }
 
         public void CustomerForTheDay()
         {
-            LikelyhoodToBuyLemonade=WantToPay(weather.WeatherScore, weather.TempScore, recipe.RecipeScore);
+            LikelyhoodToBuyLemonade=WantToPay(StartingOdds, weather.WeatherScore, weather.TempScore, recipe.RecipeScore);
             PocketChange();
         }
        

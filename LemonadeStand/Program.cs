@@ -18,7 +18,7 @@ namespace LemonadeStand
             Store Store = new Store();
             Day Day = new Day();
             Game game = new Game();
-            game.RunGame();
+            Store.CalculateNewCashTotal();
 
         }
     }

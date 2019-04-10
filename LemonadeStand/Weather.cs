@@ -7,13 +7,9 @@ namespace LemonadeStand
 {
     public class  Weather
     {
-        public string Sunny="Sunny";
         public int SunnyScore = 1;
-        public string Cloudy = "Cloudy";
         public int CloudyScore = 0;
-        public string Foggy = "Foggy";
         public int FoggyScore = -1;
-        public string Rainy = "Rainy";
         public int RainyScore = -2;
         public string GameWeather;
         public int WeatherScore;
@@ -30,8 +26,7 @@ namespace LemonadeStand
         }
         public Weather()
         {
-            WeatherScore = WeatherForTheDay(FindWeathernumber());
-            TempScore = FindTempScore(CalculateTemp());
+          
         }
         public int WeatherForTheDay(int number)
         {
@@ -59,16 +54,16 @@ namespace LemonadeStand
             switch (number)
             {
                 case 1:
-                    GameWeather = Sunny;
+                    GameWeather = "Sunny";
                     return GameWeather;
                 case 2:
-                    GameWeather = Cloudy;
+                    GameWeather = "Cloudy";
                     return GameWeather;
                 case 3:
-                    GameWeather = Foggy;
+                    GameWeather = "Foggy";
                     return GameWeather;
                 case 4:
-                    GameWeather = Rainy;
+                    GameWeather = "Rainy";
                     return GameWeather;
             }
             return GameWeather;
@@ -113,7 +108,6 @@ namespace LemonadeStand
             WeatherForTheDay(number);
             FindGameWeather(number);
         }
-        public Forecast Forecast;
     
     }
 }

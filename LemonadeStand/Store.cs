@@ -7,27 +7,25 @@ namespace LemonadeStand
 {
     public class Store
     {
-        public Lemons lemons;
-        public Sugar sugar;
-        public Ice ice;
-        public Cups cups;
-        public Player player;
         public string Name;
         public double TotalCost;
+        public double PricePerLemon = .15;
+        public double PricePerCupOfSugar = .05;
+        public double PricePerIce = .05;
+        public double PricePerCup = .10;
+        public double price;
+        public double Cost;
+        public int item;
+        public int BoughtLemons;
+        public int BoughtSugar;
+        public int BoughtIce;
+        public int BoughtCups;
         //methods
 
         public Store()
         {
-            lemons = new Lemons();
-            sugar = new Sugar();
-            ice = new Ice();
-            cups = new Cups();
-            player = new Player();
-            Name = WhatToBuy();
-            TotalCost = TotalCashSpent(Name);
+
         }
-
-
 
                 public string WhatToBuy()
                 {            
@@ -35,15 +33,15 @@ namespace LemonadeStand
                 string Name = Console.ReadLine();
                 string item = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Name.ToLower());
                 switch (item)
-                    {
+                   {
                     case "Lemons":
-                        return item;
+                        return Name;
                     case "Ice":
-                        return item;
+                        return Name;
                     case "Sugar":
-                        return item;
+                        return Name;
                     case "Cups":
-                        return item;
+                        return Name;
                     default:
                         Console.WriteLine("Please enter a real item name.");
                         Console.ReadKey();
@@ -53,20 +51,56 @@ namespace LemonadeStand
 
             public int AddToStock(string name)
             {
-                int item;
+
                 switch (name)
                 {
                     case "Lemons":
-                        item = lemons.ItemCount;
+                    Console.WriteLine("How many Lemons would you like to purchase?");
+                    try
+                    {
+                        item = int.Parse(Console.ReadLine());
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Value needs to be a number");
+                    }
+                    item = BoughtLemons+item;
                         return item;
                     case "Sugar":
-                        item = sugar.ItemCount;
+                    Console.WriteLine("How much sugar would you like to purchase?");
+                    try
+                    {
+                        item = int.Parse(Console.ReadLine());
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Value needs to be a number");
+                    }
+                    item = BoughtSugar+item;
                         return item;
                     case "Ice":
-                        item = ice.ItemCount;
+                    Console.WriteLine("How much Ice would you like to purchase?");
+                    try
+                    {
+                        item = int.Parse(Console.ReadLine());
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Value needs to be a number");
+                    }
+                    item = BoughtIce+item;
                         return item;
                     case "Cups":
-                        item = cups.ItemCount;
+                    Console.WriteLine("How many would you like to purchase?");
+                    try
+                    {
+                        item = int.Parse(Console.ReadLine());
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Value needs to be a number");
+                    }
+                    item = BoughtCups+item;
                         return item;
                     default:
                         return 0;
@@ -76,33 +110,20 @@ namespace LemonadeStand
 
             public double TotalCashSpent(string name)
             {
-                TotalCost=0;
-                double Cost = 0;
-                int Numb = AddToStock(name);
+                AddToStock(name);
                 double price = PurchaseItemPrice(name);
-                Console.WriteLine("How many would you like to purchase?");
-                int number = 0;
-                try
-                {
-                    number = int.Parse(Console.ReadLine());
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Value needs to be a number");
-                }
-                Cost = Cost+ price * number;
+                Cost = Cost+ price * item;
                 Console.WriteLine(Cost);
                 Console.ReadKey();
-                Console.WriteLine("Would you like to buy more?");
-                string item = Console.ReadLine();
-                switch (item)
+                Console.WriteLine("Would you like to buy more? Yes or no.");
+                string test = Console.ReadLine();
+                switch (test)
                 {
                     case "yes":
                         TotalCost = TotalCost + Cost;
                         WhatToBuy();
                         return TotalCashSpent(name);
                     case "no":
-                        Numb = Numb + number;
                         TotalCost = TotalCost+ Cost;
                         return TotalCost;
                     default:
@@ -113,55 +134,48 @@ namespace LemonadeStand
                 }                
             }
 
-            public double CalculateNewCashTotal()
+            public double CalculateNewCashTotal(Player play)
             {
                  string name= WhatToBuy();
 
                 TotalCashSpent(name);
-                double cash=player.StartingMoney;
+                double cash=play.StartingMoney;
                 if (TotalCost > cash)
                 {
                     Console.WriteLine("Not enough Funds for Purchase");
                     Console.ReadKey();
-                    return CalculateNewCashTotal();
+                    return CalculateNewCashTotal(play);
                 }
                 else if (TotalCost<= cash)
                 {
-                    cash = cash - TotalCost;
+                    play.StartingMoney = cash - TotalCost;
                     Console.WriteLine("Your new cash total is " + cash);
                     return cash;
                 }
                 return cash;
-            }
-
-        
+            }        
 
         public double PurchaseItemPrice(string name)
         {
 
-            double price;
+
             switch (name)
             {
                 case "Lemons":
-                    price = lemons.price;
+                    price = PricePerLemon;
                     return price;
                 case "Ice":
-                    price = ice.price;
+                    price = PricePerIce;
                     return price;
                 case "Sugar":
-                    price = sugar.price;
+                    price = PricePerCupOfSugar;
                     return price;
                 case "Cups":
-                    price = cups.price;
+                    price = PricePerCup;
                     return price;
                 default:
                     return 0.00;
             }
-        }
-      
-
-        
-
-    }
-    
+        }                    
+    }    
 }

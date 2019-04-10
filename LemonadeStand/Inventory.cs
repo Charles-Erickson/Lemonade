@@ -13,47 +13,35 @@ namespace LemonadeStand
         public int IceStock;
         public int CupStock;
         public Store store;
-        public Lemons lemons;
-        public Sugar sugar;
-        public Ice ice;
-        public Cups cups;
         public Recipe recipe;
-        public List<int> Supplies;
-        List<int> ComparingSuppliesAndRecipe;
-        //methods
+
 
       
 
         public Inventory()
         {
-            lemons = new Lemons();
-            sugar = new Sugar();
-            ice = new Ice();
-            cups = new Cups();
             store = new Store();
             recipe = new Recipe();
-            Supplies = new List<int>();
-            LemonStock = lemons.ItemCount;
-            SugarStock = sugar.ItemCount;
-            IceStock = ice.ItemCount;
-            CupStock = cups.ItemCount;
+            LemonStock = LemonStock+store.BoughtLemons;
+            SugarStock = SugarStock + store.BoughtSugar;
+            IceStock = IceStock + store.BoughtIce;
+            CupStock = CupStock + store.BoughtCups;
         }
 
 
         public void UseStock()
         {
-            LemonStock = LemonStock - recipe.lem;
-            SugarStock = SugarStock - recipe.sug;
-            LemonStock = LemonStock - recipe.lem;
+            if (LemonStock >= recipe.lem && SugarStock >= recipe.sug && IceStock >= recipe.ice)
+            {
+                LemonStock = LemonStock - recipe.lem;
+                SugarStock = SugarStock - recipe.sug;
+                LemonStock = LemonStock - recipe.lem;
+            }
+            else if (LemonStock < recipe.lem || SugarStock < recipe.sug || IceStock < recipe.ice)
+            {
+                Console.WriteLine("You've sold out of Lemonade.");
+                Console.ReadKey();
+            }
         }
-        
-
-
-
-       
-
-
-
-
     } 
 }

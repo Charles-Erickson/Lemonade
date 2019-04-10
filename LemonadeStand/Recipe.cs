@@ -11,14 +11,14 @@ namespace LemonadeStand
         public int sug;
         public int ice;
         public int cup;
-        public int RemainingCups=10;
+        public int RemainingCups;
         public double PriceOfLemonade;
         public int RecipeScore;
         public List<int> PitcherRecipe;
 
         public Recipe()
         {
-            PitcherRecipe = new List<int>();        
+            RemainingCups = 10;    
         }
 
         public void AddToPitcher()
@@ -41,7 +41,7 @@ namespace LemonadeStand
             }
             catch (FormatException)
             {
-                Console.WriteLine("Value needs to be a number");
+                Console.WriteLine("Value needs to be a number.");
             }
             lem = int.Parse(Console.ReadLine());
             return lem;
@@ -50,6 +50,15 @@ namespace LemonadeStand
         public int PickIce()
         {
             Console.WriteLine("How much ice per pitcher?");
+            int number = 0;
+            try
+            {
+                number = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Value needs to be a number.");
+            }
             ice = int.Parse(Console.ReadLine());
             return ice;
         }
@@ -57,7 +66,15 @@ namespace LemonadeStand
         public int PickSugar()
         {
             Console.WriteLine("How much sugar per pitcher?");
-            sug = int.Parse(Console.ReadLine());
+            sug = int.Parse(Console.ReadLine()); int number = 0;
+            try
+            {
+                number = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Value needs to be a number.");
+            }
             return sug;
         }
 
@@ -82,7 +99,7 @@ namespace LemonadeStand
         }
         public void MakeLemondae()
         {
-            Console.WriteLine("Let's make Lemonade!");
+            Console.WriteLine("Let's make Lemonade! Pick out the amount of ingrediants you want to use per pitcher.");
             Console.ReadKey();
             PickLemons();
             PickSugar();

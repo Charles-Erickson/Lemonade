@@ -25,11 +25,8 @@ namespace LemonadeStand
             weather = new Weather();
             customer = new Customer();
             inventory = new Inventory();
-            recipe = new Recipe();
-            player = new Player();
   
         }
-
 
         public int CustomersPerDay()
         {
@@ -61,7 +58,6 @@ namespace LemonadeStand
 
         public void DailyCustomer(int range)
         {
-            int number;
             int i;
             for (i = 0; i < range; i++)
             {
@@ -80,14 +76,10 @@ namespace LemonadeStand
 
         }
 
-
-
-
         public void RunDayFunction()
-            {
-
+        {
             weather.DayGameWeather();
-            Console.WriteLine("Welcome to a new day. The weather is " + weather.GameWeather + " The Temperature is " + weather.Tempeture);
+            Console.WriteLine("Welcome to a new day. The weather is " + weather.GameWeather +"."+ "The Temperature " + weather.Tempeture+".");
             store.CalculateNewCashTotal();
             recipe.MakeLemondae();
             player.SetPrice();
@@ -95,14 +87,6 @@ namespace LemonadeStand
             DailyCustomer(CustomersPerDay());
             Console.WriteLine(player.StartingMoney);
             Console.ReadLine();
-
-
-        }
-
-                       
-
-
-
-        
+        }        
     }
 }

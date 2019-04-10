@@ -8,16 +8,10 @@ namespace LemonadeStand
     public class Game
     {
         public Customer customer;
-
         public Store store;
-
         public Player player;
-
         public UserInterface userinterface;
-
         public Day day;
-        public Weather weather;
-
         public Inventory inventory;
 
         public Game()
@@ -27,9 +21,8 @@ namespace LemonadeStand
             inventory = new Inventory();
             day = new Day();
             player = new Player();
-            weather = new Weather();
-
         }
+
         public void RunGame()
         {
             Console.WriteLine("Welcome to the Lemonade game! the goal is to make the most profit possible in a week from your staring $20.\n" +
@@ -40,9 +33,21 @@ namespace LemonadeStand
             int i;
             for (i = 0; i < 7; i++)
             {
-                day.RunDayFunction();
-                Console.WriteLine(weather.GameWeather + " " + weather.Tempeture);
+                day.RunDayFunction();             
             }
+        }
+        public void rungame()
+        {
+            Inventory Inventory = new Inventory();
+            Recipe Recipe = new Recipe();
+            Customer Customer = new Customer();
+            Player Player = new Player();
+            Store Store = new Store();
+            Day Day = new Day();
+            Game game = new Game();
+
+            store.CalculateNewCashTotal(Player);
+
         }
     }
 
