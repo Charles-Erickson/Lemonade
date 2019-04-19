@@ -29,8 +29,6 @@ namespace LemonadeStand
         }
 
 
-    
-
         public int PickLemons()
         {
             Console.WriteLine("How many lemons per pitcher?");
@@ -97,6 +95,7 @@ namespace LemonadeStand
             }
             return RecipeScore;
         }
+
         public void MakeLemondae()
         {
             Console.WriteLine("Let's make Lemonade! Pick out the amount of ingrediants you want to use per pitcher.");
@@ -104,10 +103,6 @@ namespace LemonadeStand
             PickLemons();
             PickSugar();
             PickIce();
-
         }
-    
-
-
     }
 }

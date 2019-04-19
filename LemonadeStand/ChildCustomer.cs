@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public abstract class Customer
+    class ChildCustomer: Customer
     {
-        public double SpareMoney;
-        public int LikelyhoodToBuyLemonade;
-        public int StartingOdds;
-        public Weather weather;
-        public Recipe recipe;
-
         public Customer()
         {
             weather = new Weather();
@@ -33,7 +28,7 @@ namespace LemonadeStand
             return StartingOdds;
         }
 
-        public int WantToPay(int odds, int weatherscore,int Temp, int recipe)
+        public int WantToPay(int odds, int weatherscore, int Temp, int recipe)
         {
             LikelyhoodToBuyLemonade = odds + weatherscore + Temp + recipe;
             return LikelyhoodToBuyLemonade;
@@ -41,8 +36,7 @@ namespace LemonadeStand
 
         public void CustomerForTheDay()
         {
-            LikelyhoodToBuyLemonade=WantToPay(StartingOdds, weather.WeatherScore, weather.TempScore, recipe.RecipeScore);
+            LikelyhoodToBuyLemonade = WantToPay(StartingOdds, weather.WeatherScore, weather.TempScore, recipe.RecipeScore);
             PocketChange();
-        }       
+        }
     }
-}

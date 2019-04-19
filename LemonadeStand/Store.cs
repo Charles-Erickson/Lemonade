@@ -158,7 +158,6 @@ namespace LemonadeStand
         public double PurchaseItemPrice(string name)
         {
 
-
             switch (name)
             {
                 case "Lemons":
