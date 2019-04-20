@@ -21,28 +21,22 @@ namespace LemonadeStand
 
         public double PocketChange()
         {
-            Random MoneyRange = new Random();
-            SpareMoney = MoneyRange.NextDouble() * (1.5 - .2) + .2;
-            return SpareMoney;
+            return 0;
         }
 
         public int CustomerOdds()
         {
-            Random rnd = new Random();
-            StartingOdds = rnd.Next(3, 6);
-            return StartingOdds;
+            return 0;
         }
 
         public int WantToPay(int odds, int weatherscore,int Temp, int recipe)
         {
-            LikelyhoodToBuyLemonade = odds + weatherscore + Temp + recipe;
-            return LikelyhoodToBuyLemonade;
+            return 0;
         }
 
         public void CustomerForTheDay()
         {
-            LikelyhoodToBuyLemonade=WantToPay(StartingOdds, weather.WeatherScore, weather.TempScore, recipe.RecipeScore);
-            PocketChange();
+           
         }       
     }
 }

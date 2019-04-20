@@ -16,7 +16,6 @@ namespace LemonadeStand
 
         public Game()
         {
-            customer = new Customer();
             store = new Store();
             inventory = new Inventory();
             day = new Day();
@@ -39,20 +38,13 @@ namespace LemonadeStand
         public void rungame()
         {
             Inventory Inventory = new Inventory();
-            Recipe Recipe = new Recipe();
-            Customer Customer = new Customer();
+            Recipe Recipe = new Recipe();  
             Player Player = new Player();
             Store Store = new Store();
             Day Day = new Day();
             Game game = new Game();
 
             store.CalculateNewCashTotal(Player);
-
         }
     }
-
-        
-
-
-
 }

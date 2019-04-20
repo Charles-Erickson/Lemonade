@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class ChildCustomer : Customer
+    class AdultCustomer
     {
         public new double SpareMoney;
         public new int LikelyhoodToBuyLemonade;
@@ -14,7 +14,7 @@ namespace LemonadeStand
         public Weather weather;
         public Recipe recipe;
 
-        public ChildCustomer()
+        public AdultCustomer()
         {
             weather = new Weather();
             recipe = new Recipe();
